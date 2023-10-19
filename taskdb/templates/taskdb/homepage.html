@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
     <div class="container d-flex flex-column justify-content-center align-items-center border  text-dark border-secondary rounded mt-md-5 p-md-5">
         <h1>Welcome to my app</h1><br>
         {% if user.is_authenticated %}
-        <h3>Hello  {{user.username}}</h3> <br>
+        <h3>Hello  {{user.username}} </h3> <br>
         {% if user.email %}
         <h3>Email: {{user.email}}</h3><br>
         {% endif %}
@@ -29,7 +30,7 @@
         <ul class="messages">
             {% for message in messages %}
             <li class="message {% if message.tags == 'success' %}success-message{% endif %}{% if message.tags == 'info' %}info-message{% endif %}{% if message.tags == 'warning' %}warning-message{% endif %}{% if message.tags == 'error' %}error-message{% endif %}">
-                <b>{{ message }} {{user.username}}</b>
+                <b>{{ message }}</b>
             </li>
             {% endfor %}
         </ul>
